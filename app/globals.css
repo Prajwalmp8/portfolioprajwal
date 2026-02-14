@@ -1,5 +1,36 @@
 @import "tailwindcss";
+@config "../tailwind.config.mjs";
 
-*{
+* {
   font-family: Outfit;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.blue body {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+.green body {
+  background-color: #064e3b;
+  color: #ffffff;
+}
+
+.purple body {
+  background-color: #581c87;
+  color: #ffffff;
+}
+
+.red body {
+  background-color: #7f1d1d;
+  color: #ffffff;
 }

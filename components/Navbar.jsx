@@ -2,9 +2,11 @@ import { assets } from "@/assets/assets";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
+
+  const [activeSection, setActiveSection] = useState("top");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,9 +19,21 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup
+    // Active link observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, { threshold: 0.5 }); // 50% visibility
+
+    const sections = document.querySelectorAll("#top, #about, #services, #work, #contact");
+    sections.forEach(section => observer.observe(section));
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      sections.forEach(section => observer.unobserve(section));
     };
   }, []);
 
@@ -36,18 +50,17 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
       {/* Navbar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:bg-opacity-50 dark:backdrop-blur-lg dark:shadow-white/20" : ""
-        } `}
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white/50 backdrop-blur-lg shadow-sm dark:bg-black dark:shadow-white/20" : ""
+          } `}
       >
         {/* Logo */}
-        <h1 className="animate-float text-2xl font-bold text-black">
-  Prajwal
-</h1>
+        <h1 className="animate-float text-2xl font-bold text-black dark:text-white">
+          Prajwal
+        </h1>
 
         {/* <a href="#top">
           <Image
-            src={assets.logo}
+            src={isDarkMode ? assets.logo_dark : assets.logo}
             className="w-28 cursor-pointer mr-14"
             alt="logo"
           />
@@ -55,34 +68,33 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
         {/* Desktop Menu */}
         <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
-            isScroll
-              ? ""
-              : "bg-white/30 backdrop-blur-sm border border-gray-300/30 shadow-md shadow-gray-300/20"
-          }`}
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll
+            ? ""
+            : "bg-white/50 backdrop-blur-lg shadow-sm border border-gray-500/50 dark:border-white/50 dark:bg-transparent"
+            }`}
         >
           <li>
-            <a className="font-ovo" href="#top">
+            <a className={`font-ovo ${activeSection === "top" ? "font-bold text-blue-600 dark:text-blue-400" : ""}`} href="#top">
               Home
             </a>
           </li>
           <li>
-            <a href="#about" className="font-ovo">
+            <a href="#about" className={`font-ovo ${activeSection === "about" ? "font-bold text-blue-600 dark:text-blue-400" : ""}`}>
               About Me
             </a>
           </li>
           <li>
-            <a href="#services" className="font-ovo">
+            <a href="#services" className={`font-ovo ${activeSection === "services" ? "font-bold text-blue-600 dark:text-blue-400" : ""}`}>
               Skills
             </a>
           </li>
           <li>
-            <a href="#work" className="font-ovo">
+            <a href="#work" className={`font-ovo ${activeSection === "work" ? "font-bold text-blue-600 dark:text-blue-400" : ""}`}>
               My Work
             </a>
           </li>
           <li>
-            <a href="#contact" className="font-ovo">
+            <a href="#contact" className={`font-ovo ${activeSection === "contact" ? "font-bold text-blue-600 dark:text-blue-400" : ""}`}>
               Contact Me
             </a>
           </li>
@@ -93,8 +105,8 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           {/* Dark mode toggle */}
           <button onClick={() => setIsDarkMode(prev => !prev)} className="p-2 rounded-full hover:bg-gray-200 transition">
             <Image
-              src={ isDarkMode ? assets.moon_icon : assets.sun_icon}
-              alt="moon"
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt="toggle theme"
               width={24}
               height={24}
               className=""
@@ -104,11 +116,11 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           {/* Contact button (Desktop only) */}
           <a
             href="#contact"
-            className="hidden lg:flex items-center gap-2 px-6 py-2 border border-gray-800 rounded-full ml-2 font-ovo text-sm hover:bg-gray-100 transition"
+            className="hidden lg:flex items-center gap-2 px-6 py-2 border border-gray-500 rounded-full ml-4 font-ovo text-sm hover:bg-gray-100 transition dark:border-white/50 dark:hover:bg-darkHover"
           >
             Contact
             <Image
-              src={assets.arrow_icon}
+              src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon}
               alt="arrow"
               width={12}
               height={12}
@@ -121,7 +133,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             onClick={() => setMenuOpen(true)}
           >
             <Image
-              src={assets.menu_black}
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
               alt="menu"
               width={24}
               height={24}
@@ -150,7 +162,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           <li>
             <a
               href="#top"
-              className="font-ovo text-lg"
+              className={`font-ovo text-lg ${activeSection === "top" ? "text-blue-400 font-bold" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               Home
@@ -159,7 +171,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           <li>
             <a
               href="#about"
-              className="font-ovo text-lg"
+              className={`font-ovo text-lg ${activeSection === "about" ? "text-blue-400 font-bold" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               About Me
@@ -168,7 +180,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           <li>
             <a
               href="#services"
-              className="font-ovo text-lg"
+              className={`font-ovo text-lg ${activeSection === "services" ? "text-blue-400 font-bold" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               Services
@@ -177,7 +189,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           <li>
             <a
               href="#work"
-              className="font-ovo text-lg"
+              className={`font-ovo text-lg ${activeSection === "work" ? "text-blue-400 font-bold" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               My Work
@@ -186,7 +198,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
           <li>
             <a
               href="#contact"
-              className="font-ovo text-lg"
+              className={`font-ovo text-lg ${activeSection === "contact" ? "text-blue-400 font-bold" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               Contact Me

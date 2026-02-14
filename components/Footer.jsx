@@ -2,14 +2,14 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({ isDarkMode }) => {
   return (
-    <footer className="mt-20 bg-white text-black py-12 relative shadow-lg">
+    <footer className="mt-20 bg-white dark:bg-black text-black dark:text-white py-12 relative shadow-lg">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Logo */}
-        <h1 className="animate-float text-2xl font-bold text-black">
-  Prajwal M P
-</h1>
+        <h1 className="animate-float text-2xl font-bold text-black dark:text-white">
+          Prajwal M P
+        </h1>
         {/* <Image
           src={assets.logo}
           alt="Logo"
@@ -18,8 +18,8 @@ const Footer = () => {
 
         {/* Email */}
         <div className="flex items-center justify-center gap-3 mb-8 text-sm sm:text-lg font-light">
-          <Image src={assets.mail_icon} alt="Mail Icon" className="w-6 animate-pulse" />
-          <span className="hover:text-blue-600 transition-colors cursor-pointer">
+          <Image src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} alt="Mail Icon" className="w-6 animate-pulse dark:invert" />
+          <span className="hover:text-blue-600 transition-colors cursor-pointer dark:text-white">
             prajwalmp394@gmail.com
           </span>
         </div>
@@ -29,7 +29,7 @@ const Footer = () => {
           <li className="relative group transition-transform duration-300 hover:-translate-y-2">
             <a
               href="https://github.com/Prajwalmp8"
-              className="hover:text-blue-600 transition-colors duration-300"
+              className="hover:text-blue-600 transition-colors duration-300 dark:text-white dark:hover:text-blue-600"
             >
               Github
             </a>
@@ -37,7 +37,7 @@ const Footer = () => {
           <li className="relative group transition-transform duration-300 hover:-translate-y-2">
             <a
               href="https://www.linkedin.com/in/prajwalmp8088/"
-              className="hover:text-blue-600 transition-colors duration-300"
+              className="hover:text-blue-600 transition-colors duration-300 dark:text-white dark:hover:text-blue-600"
             >
               Linkedin
             </a>
@@ -45,7 +45,7 @@ const Footer = () => {
           <li className="relative group transition-transform duration-300 hover:-translate-y-2">
             <a
               href="https://www.naukri.com/mnjuser/profile"
-              className="hover:text-blue-600 transition-colors duration-300"
+              className="hover:text-blue-600 transition-colors duration-300 dark:text-white dark:hover:text-blue-600"
             >
               Naukri
             </a>
@@ -53,11 +53,11 @@ const Footer = () => {
         </ul>
 
         {/* Divider */}
-        <div className="w-full h-[1px] bg-gray-300 mb-6"></div>
+        <div className="w-full h-[1px] bg-gray-300 dark:bg-white/20 mb-6"></div>
 
         {/* Copyright */}
-        <p className="text-xs sm:text-sm md:text-base text-gray-600">
-          © {new Date().getFullYear()} <span className="font-semibold text-black">Prajwal M P</span>. All rights reserved.
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-white/80">
+          © {new Date().getFullYear()} <span className="font-semibold text-black dark:text-white">Prajwal M P</span>. All rights reserved.
         </p>
       </div>
     </footer>

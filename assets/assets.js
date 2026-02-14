@@ -37,14 +37,14 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 
 import image1_png from './image1.png.jpg';
-import user2_image from'./user2-image.jpg';
+import user2_image from './user2-image.jpg';
 
 
 export const assets = {
     user2_image,
     image1_png,
-   
-   
+
+
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -61,7 +61,7 @@ export const assets = {
     logo_dark,
     mail_icon,
     mail_icon_dark,
-    
+
     download_icon,
     hand_icon,
     header_bg_color,
@@ -87,40 +87,69 @@ export const workData = [
     {
         title: 'Frontend project',
         description: 'Design-E-commerce website',
+        fullDescription: 'A fully responsive E-commerce website featuring a modern UI/UX design. Includes product listings, shopping cart functionality, and seamless checkout experience. Built with a focus on performance and accessibility.',
         bgImage: '/work-1.png',
+        link: 'https://example.com/ecommerce',
+        github: 'https://github.com/example/ecommerce'
     },
     {
         title: 'Mobile App',
         description: 'Vulnerability Scanner using Flutter',
+        fullDescription: 'A cross-platform mobile application developed using Flutter that scans networks for vulnerabilities. It integrates with machine learning models to predict potential security threats and provides real-time alerts.',
         bgImage: '/work-2.png',
+        link: 'https://example.com/scanner',
+        github: 'https://github.com/example/scanner'
     },
     {
         title: 'Web Design',
         description: 'Design BookStore',
+        fullDescription: 'An online bookstore with an elegant interface for browsing and purchasing books. Features include user reviews, category filtering, and a personalized recommendation engine.',
         bgImage: '/work-3.png',
+        link: 'https://example.com/bookstore',
+        github: 'https://github.com/example/bookstore'
     },
     {
         title: 'backend project',
         description: 'Application for Live Update on ICD Schemes',
+        fullDescription: 'A robust backend system designed to provide real-time updates on Integrated Child Development (ICD) schemes. It handles large-scale data processing and ensures data integrity across multiple government departments.',
         bgImage: '/work-4.png',
+        link: 'https://example.com/icd-schemes',
+        github: 'https://github.com/example/icd-schemes'
     },
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'Flutter', description: 'Built UI components for integrating with ML-based security scanning.', link: '' },
-    { icon: assets.graphics_icon, title: 'Sql', description: 'MySQL – Used for relational database design, queries, and CRUD operations.', link: '' },
-    { icon: assets.graphics_icon, title: 'Java', description: 'Its robust and secure architecture enables reliable performance and strong memory management..', link: '' },
-     { icon: assets.graphics_icon, title: 'Springboot', description: 'Seamless integration with databases, security, and REST APIs.', link: '' },
+    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', },
+    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...' },
+    { icon: assets.ui_icon, title: 'Flutter', description: 'Built UI components for integrating with ML-based security scanning.' },
+    { icon: assets.graphics_icon, title: 'Sql', description: 'MySQL – Used for relational database design, queries, and CRUD operations.' },
+    { icon: assets.graphics_icon, title: 'Java', description: 'Its robust and secure architecture enables reliable performance and strong memory management..', },
+    { icon: assets.graphics_icon, title: 'Springboot', description: 'Seamless integration with databases, security, and REST APIs.' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js, Sql'},
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js, Sql' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E in Computer Science and Engineering' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
 export const toolsData = [
     assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+];
+
+export const languagesPercentage = [
+    { language: 'HTML', percentage: 95 },
+    { language: 'CSS', percentage: 90 },
+    { language: 'JavaScript', percentage: 85 },
+    { language: 'React Js', percentage: 80 },
+    { language: 'Next Js', percentage: 80 },
+    { language: 'Sql', percentage: 75 },
+    { language: 'Java', percentage: 85 },
+    { language: 'Springboot', percentage: 75 },
+];
+
+export const educationData = [
+    { degree: 'B.E in Computer Science and Engineering', institution: 'Visvesvaraya Technological University', year: '2020 - 2024', description: 'Graduated with a CGPA of 8.5' },
+    { degree: 'Pre-University Course', institution: 'Mysore Public School', year: '2018 - 2020', description: 'Passed with Distinction' },
+    { degree: 'Secondary School', institution: 'Mysore Public School', year: '2018', description: 'Passed within Distinction' },
 ];

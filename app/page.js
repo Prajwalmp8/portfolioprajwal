@@ -10,15 +10,18 @@ import { useEffect, useState } from "react";
 
 
 export default function Home() {
-
+  /* Updated to use simple boolean dark mode state to match Navbar expectations */
   const [isDarkMode, setIsDarkMode] = useState(true);
+
   useEffect(() => {
-    if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    // Check local storage or system preference on mount
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage))) {
       setIsDarkMode(true);
-    }else{
+    } else {
       setIsDarkMode(false);
     }
   }, []);
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -28,15 +31,16 @@ export default function Home() {
       localStorage.theme = 'light';
     }
   }, [isDarkMode]);
+
   return (
-   <>
-   <Navbar  isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <About isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <Services isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <Work isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <Contact isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   <Footer isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-   </>
+    <>
+      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Header isDarkMode={isDarkMode} />
+      <About isDarkMode={isDarkMode} />
+      <Services isDarkMode={isDarkMode} />
+      <Work isDarkMode={isDarkMode} />
+      <Contact isDarkMode={isDarkMode} />
+      <Footer isDarkMode={isDarkMode} />
+    </>
   );
 }
