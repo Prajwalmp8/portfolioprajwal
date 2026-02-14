@@ -102,7 +102,7 @@ const ProjectDetails = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-3 mb-8">
-                        {['React', 'Next.js', 'Tailwind CSS', 'Node.js'].map((tech, index) => (
+                        {['React', 'javascript', 'Spring Boot', 'Spring Security', 'MySQL', 'Axios'].map((tech, index) => (
                             <span key={index} className="px-4 py-2 bg-gray-100 dark:bg-white/10 rounded-full text-sm font-medium">
                                 {tech}
                             </span>

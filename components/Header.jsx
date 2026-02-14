@@ -2,6 +2,7 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "motion/react"
+import { TypeAnimation } from 'react-type-animation'
 
 const Header = () => {
   return (
@@ -42,11 +43,29 @@ const Header = () => {
       <motion.h1
         initial={{ y: -30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }} className='text-4xl sm:text-6xl lg:text-[66px] font-Ovo'>Java Full StacK Developer</motion.h1>
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className='text-4xl sm:text-6xl lg:text-[60px] font-Ovo'>
+        Java Full Stack{' '}
+        <TypeAnimation
+          sequence={[
+            'Developer',
+            2000,
+            '',
+            1000
+          ]}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
+        />
+      </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.7 }} className='max-w-2xl mx-auto font-Ovo'>I an strong in the Front-end technologies like React.js, HTML5, CSS3, Next.js, JavaScript, Springboot, Java and Sql. </motion.p>
+        transition={{ duration: 0.6, delay: 0.7 }} className='max-w-2xl mx-auto font-Ovo'>I have strong expertise in front-end technologies including React.js,HTML5, CSS3, and JavaScript, along with solid backend knowledge of Spring Boot, Java, and SQL </motion.p>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.7 }} className='max-w-2xl mx-auto font-Ovo'>I am a quick learner with a strong foundation in computer science fundamentals, and I am passionate about building innovative and user-friendly web applications. </motion.p>
       <div className="flex items-center gap-5 mt-8 justify-center">
         {/* Contact Button */}
         <motion.a

@@ -15,10 +15,22 @@ const Work = ({ isDarkMode }) => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }} className='text-center mb-2 text-lg font-Ovo'>My Projects</motion.h4>
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }} className='text-center text-5xl font-Ovo'>MY latest work</motion.h1>
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className='text-center text-5xl font-Ovo'
+      >
+        <span className="relative inline-block">
+          MY latest work
+          <motion.div
+            className="absolute left-0 -bottom-2 h-1 bg-gray-700 dark:bg-white rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: '100%' }}
+            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          />
+        </span>
+      </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

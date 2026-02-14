@@ -38,13 +38,16 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 
 import image1_png from './image1.png.jpg';
 import user2_image from './user2-image.jpg';
-
+import postman from './OIP.png';
+import eclipse from './OIP1.png';
+import sql from './OIP2.png';
 
 export const assets = {
     user2_image,
     image1_png,
-
-
+    postman,
+    eclipse,
+    sql,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -85,71 +88,80 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Design-E-commerce website',
-        fullDescription: 'A fully responsive E-commerce website featuring a modern UI/UX design. Includes product listings, shopping cart functionality, and seamless checkout experience. Built with a focus on performance and accessibility.',
+        title: 'website for farmers',
+        description: 'E-Commerce Platform for Farmers',
+        fullDescription: 'The E-Commerce Platform for Farmers is a full-stack web application designed to create a direct digital marketplace between farmers and customers. The platform removes intermediaries, enabling farmers to sell agricultural products directly to consumers at fair prices while customers gain access to fresh produce with complete transparency.',
         bgImage: '/work-1.png',
         link: 'https://example.com/ecommerce',
-        github: 'https://github.com/example/ecommerce'
+        github: 'https://github.com/Prajwalmp8/E-froming'
     },
     {
         title: 'Mobile App',
-        description: 'Vulnerability Scanner using Flutter',
-        fullDescription: 'A cross-platform mobile application developed using Flutter that scans networks for vulnerabilities. It integrates with machine learning models to predict potential security threats and provides real-time alerts.',
+        description: 'Vulnerability Scanner (Flutter + Machine Learning)',
+        fullDescription: 'The Vulnerability Scanner is a cross-platform security analysis application that leverages Machine Learning to automatically detect potential software and system vulnerabilities. The application provides a simple mobile interface built with Flutter, while powerful ML models running in Python analyze security data in real time. The goal is to make cybersecurity assessments accessible, fast, and automated.',
         bgImage: '/work-2.png',
         link: 'https://example.com/scanner',
         github: 'https://github.com/example/scanner'
     },
     {
-        title: 'Web Design',
-        description: 'Design BookStore',
+        title: 'Web Design for BookStore',
+        description: 'Design BookStore to sell books online ',
         fullDescription: 'An online bookstore with an elegant interface for browsing and purchasing books. Features include user reviews, category filtering, and a personalized recommendation engine.',
         bgImage: '/work-3.png',
         link: 'https://example.com/bookstore',
-        github: 'https://github.com/example/bookstore'
+        github: 'https://github.com/Prajwalmp8/BOOKSTORE'
     },
     {
-        title: 'backend project',
-        description: 'Application for Live Update on ICD Schemes',
-        fullDescription: 'A robust backend system designed to provide real-time updates on Integrated Child Development (ICD) schemes. It handles large-scale data processing and ensures data integrity across multiple government departments.',
+        title: 'Gemini AI',
+        description: 'React-Based Intelligent Conversation Platform',
+        fullDescription: 'Gemini AI Chat Assistant is an intelligent, interactive web application built using React.js and the Gemini API. It enables users to engage in real-time conversations with an AI capable of answering questions, generating content, assisting with coding, and providing instant insights.Designed with a clean, modern UI and smooth animations, the platform delivers fast responses, intuitive chat interactions, and a seamless user experience across all devices.',
         bgImage: '/work-4.png',
-        link: 'https://example.com/icd-schemes',
-        github: 'https://github.com/example/icd-schemes'
+        link: 'https://chat-ai-t9sq.vercel.app/',
+        github: 'https://github.com/Prajwalmp8/ChatAI'
+    },
+    {
+        title: 'Netflix Clone',
+        description: 'Fetch movies and TV shows using external APIs',
+        fullDescription: 'The Netflix Clone is a responsive web application built using React.js and movie data APIs that replicates the core user experience of the original Netflix platform. The application allows users to explore trending movies, popular TV shows, and featured content through a visually rich and interactive interface.Designed with a modern UI, smooth animations, and dynamic content loading, the project demonstrates real-world API integration, component-based architecture, and responsive design principles.',
+        bgImage: '/work-4.png',
+        link: 'https://netflix-beta-blond.vercel.app/',
+        github: 'https://github.com/Prajwalmp8/Netflix'
     },
 ]
 
+
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...' },
-    { icon: assets.ui_icon, title: 'Flutter', description: 'Built UI components for integrating with ML-based security scanning.' },
-    { icon: assets.graphics_icon, title: 'Sql', description: 'MySQL – Used for relational database design, queries, and CRUD operations.' },
-    { icon: assets.graphics_icon, title: 'Java', description: 'Its robust and secure architecture enables reliable performance and strong memory management..', },
-    { icon: assets.graphics_icon, title: 'Springboot', description: 'Seamless integration with databases, security, and REST APIs.' },
+    { icon: assets.web_icon, title: 'Itvedant (2025)', description: 'Full Stack Development with Spring Boot & React', },
+    { icon: assets.mobile_icon, title: 'HackerRank (2024)', description: 'Python Development', },
+    { icon: assets.ui_icon, title: 'Infosys Springboard (2023)', description: 'Introduction to Artificial Intelligence', },
+    { icon: assets.graphics_icon, title: 'National Cybersecurity Centre of Excellence (Oct 2023)', description: 'Ethical Hacking & Cybersecurity -Training in networking, vulnerability analysis, and web application scanning.', },
+    { icon: assets.graphics_icon, title: 'Techciti (2024)', description: 'Web Development Intern', },
+    { icon: assets.graphics_icon, title: '10 Seconds (2022)', description: 'Soft Skills & Microsoft Office', },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js, Sql' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Java, Sql' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E in Computer Science and Engineering' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git, assets.postman, assets.eclipse, assets.sql
 ];
 
 export const languagesPercentage = [
     { language: 'HTML', percentage: 95 },
-    { language: 'CSS', percentage: 90 },
+    { language: 'CSS', percentage: 70 },
     { language: 'JavaScript', percentage: 85 },
     { language: 'React Js', percentage: 80 },
-    { language: 'Next Js', percentage: 80 },
     { language: 'Sql', percentage: 75 },
     { language: 'Java', percentage: 85 },
-    { language: 'Springboot', percentage: 75 },
+    { language: 'Springboot', percentage: 50 },
+    { language: 'Mongo Db', percentage: 50 },
 ];
 
 export const educationData = [
-    { degree: 'B.E in Computer Science and Engineering', institution: 'Visvesvaraya Technological University', year: '2020 - 2024', description: 'Graduated with a CGPA of 8.5' },
-    { degree: 'Pre-University Course', institution: 'Mysore Public School', year: '2018 - 2020', description: 'Passed with Distinction' },
-    { degree: 'Secondary School', institution: 'Mysore Public School', year: '2018', description: 'Passed within Distinction' },
+    { degree: 'B.E in Computer Science and Engineering', institution: 'Navkis College of Engineering', year: '2021 - 2025', description: 'Graduated with a CGPA of 7.5' },
+    { degree: 'Pre-University Course', institution: 'GLOBAL TIMES PU COLLEGE', year: '2019 - 2021', description: 'Passed with percentage of 87.16%' },
+    { degree: 'Secondary Education', institution: 'TIMES INTERNATIONAL SCHOOL', year: '2019', description: 'Passed with percentage of   87.68%' },
 ];

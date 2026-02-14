@@ -4,6 +4,7 @@ import { motion } from "motion/react"
 import { languagesPercentage, educationData, assets } from '@/assets/assets'
 import Image from 'next/image'
 import Link from 'next/link'
+import { TypeAnimation } from 'react-type-animation'
 
 const Details = () => {
     const [isDarkMode, setIsDarkMode] = useState(true);
@@ -77,8 +78,16 @@ const Details = () => {
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className='text-center text-5xl font-Ovo mb-16 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent'>
-                        Technical Skills
+                        className='text-center text-5xl font-Ovo mb-16'>
+                        <span className="relative inline-block">
+                            Technical Skills
+                            <motion.div
+                                className="absolute left-0 -bottom-2 h-1 bg-gray-700 dark:bg-white rounded-full"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '100%' }}
+                                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                            />
+                        </span>
                     </motion.h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -118,8 +127,16 @@ const Details = () => {
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className='text-center text-5xl font-Ovo mb-16 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent'>
-                        Education
+                        className='text-center text-5xl font-Ovo mb-16'>
+                        <span className="relative inline-block">
+                            Education
+                            <motion.div
+                                className="absolute left-0 -bottom-2 h-1 bg-gray-700 dark:bg-white rounded-full"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '100%' }}
+                                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                            />
+                        </span>
                     </motion.h2>
 
                     <div className='space-y-8 pl-8 md:pl-0'>
@@ -134,7 +151,14 @@ const Details = () => {
                                 <span className='absolute px-2 py-1 -left-[14px] top-0 bg-white dark:bg-black border border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-full text-xs font-bold'>
                                 </span>
                                 <div className='bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10 shadow-md hover:shadow-lg transition-all duration-300'>
-                                    <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-1'>{edu.degree}</h3>
+                                    <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-1'>
+                                        <TypeAnimation
+                                            sequence={[edu.degree, 2000]}
+                                            wrapper="span"
+                                            speed={50}
+                                            cursor={false}
+                                        />
+                                    </h3>
                                     <p className='text-blue-600 dark:text-blue-400 font-medium mb-3'>{edu.institution}</p>
                                     <span className='inline-block px-3 py-1 bg-gray-100 dark:bg-white/10 rounded-full text-sm text-gray-600 dark:text-gray-300 mb-4'>
                                         {edu.year}

@@ -20,7 +20,19 @@ const About = ({ isDarkMode }) => {
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }} className='text-center text-5xl font-Ovo'>About Me</motion.h2>
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className='text-center text-5xl font-Ovo'
+      >
+        <span className="relative inline-block">
+          About Me
+          <motion.div
+            className="absolute left-0 -bottom-2 h-1 bg-gray-700 dark:bg-white rounded-full"
+            initial={{ width: 0 }}
+            whileInView={{ width: '100%' }}
+            transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          />
+        </span>
+      </motion.h2>
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -39,7 +51,7 @@ const About = ({ isDarkMode }) => {
           initial={{ opacity: 0, }}
           whileInView={{ opacity: 1, }}
           transition={{ duration: 0.6, delay: 0.8 }} className='flex-1'>
-          <p className='mb-10 max-w-2xl font-Ovo'>I'm a passionate web developer who enjoys building clean, responsive, and user‑friendly interfaces. I work with HTML, CSS, and JavaScript, and I’m always learning modern tools to improve performance and accessibility.
+          <p className='mb-10 max-w-2xl font-Ovo'>I’m a passionate web developer who enjoys building clean, responsive, and user-friendly interfaces. I work with HTML, CSS, and JavaScript,Java,SQL and continuously explore modern frameworks and best practices to improve performance, accessibility, and user experience. I believe great design and clean code go hand in hand.
 
           </p>
           <motion.ul

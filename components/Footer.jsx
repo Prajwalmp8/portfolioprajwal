@@ -20,7 +20,15 @@ const Footer = ({ isDarkMode }) => {
         <div className="flex items-center justify-center gap-3 mb-8 text-sm sm:text-lg font-light">
           <Image src={isDarkMode ? assets.mail_icon_dark : assets.mail_icon} alt="Mail Icon" className="w-6 animate-pulse dark:invert" />
           <span className="hover:text-blue-600 transition-colors cursor-pointer dark:text-white">
-            prajwalmp394@gmail.com
+            📧 prajwalmp394@gmail.com
+          </span>
+          <span className="hover:text-blue-600 transition-colors cursor-pointer dark:text-white ">
+            📞 +91-8088968903
+          </span>
+          <span className="hover:text-blue-600 transition-colors cursor-pointer dark:text-white ">
+
+            📍 Bangalore, Karnataka, India
+
           </span>
         </div>
 
